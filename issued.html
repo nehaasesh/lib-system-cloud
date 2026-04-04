@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Issued Books</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2 style="text-align:center;">Issued Books</h2>
+
+<table border="1" width="80%" align="center" id="issueTable">
+    <tr>
+        <th>Student</th>
+        <th>Book</th>
+        <th>Date</th>
+    </tr>
+</table>
+
+<script>
+    let issued = JSON.parse(localStorage.getItem("issued")) || [];
+    let table = document.getElementById("issueTable");
+
+    issued.forEach(item => {
+        let row = table.insertRow();
+        row.insertCell(0).innerText = item.student;
+        row.insertCell(1).innerText = item.book;
+        row.insertCell(2).innerText = item.date;
+    });
+</script>
+
+</body>
+</html>
