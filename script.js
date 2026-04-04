@@ -71,6 +71,16 @@ function issueBook() {
 <<<<<<< HEAD
     alert("Book Issued Successfully!");
 }
+function login() {
+    const username = document.querySelector("input[type='text']").value;
+    const password = document.querySelector("input[type='password']").value;
+
+    if (username === "nehaa" && password === "1234") {
+        window.location.href = "dashboard.html";
+    } else {
+        alert("Invalid login");
+    }
+}
 =======
     
 >>>>>>> 7f505a3cef26f18152385a757ef497d2af3d68a8
