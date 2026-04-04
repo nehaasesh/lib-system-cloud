@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Books List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2 style="text-align:center;">Books List</h2>
+
+<input type="text" id="search" placeholder="Search books..." onkeyup="searchBooks()">
+
+<table border="1" width="80%" align="center" id="bookTable">
+    <tr>
+        <th>Book Name</th>
+        <th>Author</th>
+        <th>Quantity</th>
+        <th>Action</th>
+    </tr>
+</table>
+
+<script src="script.js"></script>
+
+<script>
+    let defaultBooks = [
+        {name:"Harry Potter", author:"J.K. Rowling", qty:10},
+        {name:"Wings of Fire", author:"A.P.J Abdul Kalam", qty:5},
+        {name:"The Alchemist", author:"Paulo Coelho", qty:8},
+        {name:"Rich Dad Poor Dad", author:"Robert Kiyosaki", qty:6},
+        {name:"Atomic Habits", author:"James Clear", qty:12},
+        {name:"Think and Grow Rich", author:"Napoleon Hill", qty:7},
+        {name:"Ikigai", author:"Hector Garcia", qty:9},
+        {name:"The Power of Now", author:"Eckhart Tolle", qty:4},
+        {name:"Deep Work", author:"Cal Newport", qty:11},
+        {name:"Clean Code", author:"Robert C. Martin", qty:3}
+    ];
+
+    let addedBooks = JSON.parse(localStorage.getItem("books")) || [];
+
+    let allBooks = [...defaultBooks, ...addedBooks];
+
+    let table = document.getElementById("bookTable");
+
+    allBooks.forEach((book, index) => {
+        let row = table.insertRow();
+
+        row.insertCell(0).innerText = book.name;
+        row.insertCell(1).innerText = book.author;
+        row.insertCell(2).innerText = book.qty;
+
+        let btn = document.createElement("button");
+        btn.innerText = "Delete";
+        btn.onclick = function() {
+            deleteBook(index);
+        };
+
+        row.insertCell(3).appendChild(btn);
+    });
+
+    function deleteBook(index) {
+        let addedBooks = JSON.parse(localStorage.getItem("books")) || [];
+
+        // Only delete from added books
+        if(index >= defaultBooks.length) {
+            addedBooks.splice(index - defaultBooks.length, 1);
+            localStorage.setItem("books", JSON.stringify(addedBooks));
+            location.reload();
+        } else {
+            alert("Default books cannot be deleted");
+        }
+    }
+</script>
+
+</body>
+</html>
