@@ -68,7 +68,6 @@ function issueBook() {
 
     localStorage.setItem("issued", JSON.stringify(issued));
 
-<<<<<<< HEAD
     alert("Book Issued Successfully!");
 }
 function login() {
@@ -81,6 +80,8 @@ function login() {
         alert("Invalid login");
     }
 }
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1986c35 (fix)
     
->>>>>>> 7f505a3cef26f18152385a757ef497d2af3d68a8
