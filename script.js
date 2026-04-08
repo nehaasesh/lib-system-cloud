@@ -14,6 +14,7 @@ function login() {
     }
 
     if (username === "nehaa" && password === "1234") {
+        localStorage.setItem("user", username);        
         window.location.href = "dashboard.html"; 
     } else {
         alert("Invalid username or password");
@@ -89,4 +90,6 @@ function issueBook() {
 
     alert("Book Issued Successfully!");
 }
+document.getElementById("welcomeText").innerText =
+"Welcome, " + localStorage.getItem("user");
 

@@ -1,8 +1,7 @@
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: Arial, sans-serif;
     background: linear-gradient(to right, #4facfe, #00f2fe);
     margin: 0;
-    padding: 0;
 }
 
 /* Login + Forms */
@@ -25,17 +24,17 @@ input, select {
 }
 
 button {
-    padding: 10px 20px;
-    background: #0078D4;
+    background: linear-gradient(45deg, #0a66c2, #00c6ff);
     color: white;
     border: none;
+    padding: 10px 18px;
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
 }
 
 button:hover {
-    background: #005fa3;
+    transform: scale(1.1);
 }
 
 /* Dashboard */
@@ -49,17 +48,17 @@ button:hover {
 .card {
     background: white;
     padding: 25px;
-    width: 180px;
-    text-align: center;
     border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    transition: transform 0.3s;
+    text-align: center;
+    width: 220px;
+    margin: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: 0.3s;
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: translateY(-8px) scale(1.03);
 }
-
 /* Table */
 table {
     background: white;
@@ -87,5 +86,13 @@ td {
     width: 40%;
     border-radius: 8px;
     border: 1px solid #ccc;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0a66c2;
+    color: white;
+    padding: 12px 25px;
 }
 
