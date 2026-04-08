@@ -6,8 +6,7 @@ function login() {
         alert("Enter username");
         return;
     }
-
-    window.location.href = "dashboard.html";
+window.location.href = "/dashboard.html";
 }
 function searchBooks() {
     let input = document.getElementById("search").value.toLowerCase();
