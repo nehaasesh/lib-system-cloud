@@ -1,13 +1,27 @@
-
+console.log("JS loaded");
 function login() {
-    let username = document.getElementById("username").value;
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
-    if(username === "") {
+    if (username === "") {
         alert("Enter username");
         return;
     }
-window.location.href = "/dashboard.html";
+
+    if (password === "") {
+        alert("Enter password");
+        return;
+    }
+
+    if (username === "nehaa" && password === "1234") {
+        window.location.href = "dashboard.html"; 
+    } else {
+        alert("Invalid username or password");
+    }
 }
+
+
+// SEARCH BOOKS
 function searchBooks() {
     let input = document.getElementById("search").value.toLowerCase();
     let rows = document.getElementById("bookTable").getElementsByTagName("tr");
@@ -22,12 +36,15 @@ function searchBooks() {
         }
     }
 }
+
+
+// ADD BOOK
 function addBook() {
     let name = document.getElementById("bookName").value;
     let author = document.getElementById("author").value;
     let qty = document.getElementById("quantity").value;
 
-    if(name === "" || author === "" || qty === "") {
+    if (name === "" || author === "" || qty === "") {
         alert("Fill all fields");
         return;
     }
@@ -47,11 +64,14 @@ function addBook() {
 
     window.location.href = "books.html";
 }
+
+
+// ISSUE BOOK
 function issueBook() {
     let student = document.getElementById("student").value;
     let book = document.getElementById("book").value;
 
-    if(student === "" || book === "") {
+    if (student === "" || book === "") {
         alert("Fill all fields");
         return;
     }
@@ -69,18 +89,4 @@ function issueBook() {
 
     alert("Book Issued Successfully!");
 }
-function login() {
-    const username = document.querySelector("input[type='text']").value;
-    const password = document.querySelector("input[type='password']").value;
 
-    if (username === "nehaa" && password === "1234") {
-        window.location.href = "dashboard.html";
-    } else {
-        alert("Invalid login");
-    }
-}
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1986c35 (fix)
-    
