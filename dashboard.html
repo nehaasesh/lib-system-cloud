@@ -6,7 +6,7 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="loadDashboard()">
 <div class="navbar">
     <h2>LMS</h2>
     <button onclick="logout()">Logout</button>
@@ -17,17 +17,17 @@
 
     <div class="card">
         <h3>📚Total Books</h3>
-        <p>120</p>
+        <p id="totalBooks"></p>
     </div>
 
     <div class="card">
         <h3>📖Issued Books</h3>
-        <p>45</p>
+        <p id="issuedBooks"></p>
     </div>
 
     <div class="card">
         <h3>✔️Available Books</h3>
-        <p>75</p>
+        <p id="availableBooks"></p>
     </div>
     <div style="text-align:center; margin-top:20px;">
     <a href="books.html">
